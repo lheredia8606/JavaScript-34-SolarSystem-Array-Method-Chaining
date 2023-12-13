@@ -5,7 +5,14 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  // Your code goes here...
+  let planetWithGivenMoon = data.planets.find(function(planet){
+    if('moonsCount' in planet){
+      return planet.moons.find(function(moon){
+        return moon === moonName;
+      });
+    }
+  }).name;
+  return planetWithGivenMoon;
 }
 
 

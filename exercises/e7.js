@@ -5,7 +5,14 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsNamesWithMoons(data) {
-  // Your code goes here...
+  let planetWithMoons = data.planets.filter(function (planet){
+    if('moonsCount' in planet){
+      return planet;
+    }
+  }).map(function(planet){
+    return planet.name;
+  });
+  return planetWithMoons;
 }
 
 
