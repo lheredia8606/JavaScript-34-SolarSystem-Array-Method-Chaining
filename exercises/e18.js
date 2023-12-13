@@ -24,7 +24,6 @@ export function getGreatestDiscoveryYear(data) {
       yearWithMost = prop;
     }
  }
- console.log('the returned is ' + yearWithMost);
  return Number(yearWithMost);
 }
 
