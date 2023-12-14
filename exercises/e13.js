@@ -6,9 +6,8 @@ import { data } from "../data/data";
 
 export function getAveragePlanetsTemperature(data) {
   let aveTemperature = data.planets
-  .map(function(planet){
-    return planet.avgTemp;
-  }).reduce (function (accum, currVal, index, array){
+  .map(planet => planet.avgTemp)
+  .reduce ((accum, currVal, index, array) =>{
     return {sum:accum.sum + currVal, arr: array};
   },{sum:0, arr:[]});
   return aveTemperature.sum / aveTemperature.arr.length;
